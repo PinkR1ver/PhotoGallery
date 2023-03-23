@@ -1,0 +1,452 @@
+﻿@font-face {
+    font-family: "vb-site-icons";
+    src: url(../icon_font/sites/icons-16-24-186a5c0ccd421eab2ee0c83d676a3ac41a8352c9a6d53053dc47cac220f93e7d.eot);
+    src: url(../icon_font/sites/icons-16-24-186a5c0ccd421eab2ee0c83d676a3ac41a8352c9a6d53053dc47cac220f93e7dd41d.eot?#iefix) format("embedded-opentype"), url(../icon_font/sites/icons-16-24-7b5d877db7f2370c0f0ee108a29086b6765cdcd25deb6ed27ba122f1ac88a871.woff) format("woff"), url(../icon_font/sites/icons-16-24-fdddc9261d765e519d1f4fac2e18e3af04b306b312797963705e6b971c3d5cc6.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes load8 {
+    0% {
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+#vertical-grid {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    overflow: hidden
+}
+
+#vertical-grid li figure {
+    cursor: pointer
+}
+
+#vertical-grid .stretch {
+    position: relative;
+    width: 1px;
+    padding-top: 200px
+}
+
+#vertical-grid>li {
+    position: absolute;
+    display: block
+}
+
+#vertical-grid>li>figure {
+    display: block;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box
+}
+
+#vertical-grid>li>figure>div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+#vertical-grid>li>figure>div img {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0
+}
+
+#vertical-grid>li>figure>div img.not-cropped {
+    width: 100%;
+    height: 100%
+}
+
+#overlay {
+    margin: 0;
+    padding: 50px 40px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    list-style: none;
+    display: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+#overlay.active {
+    display: block
+}
+
+#overlay>.close {
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+    position: absolute;
+    width: 27px;
+    height: 30px;
+    display: block
+}
+
+#overlay>.close:before,
+#overlay>.close:after {
+    display: block;
+    width: 27px;
+    border-top: 1px solid;
+    border-radius: 2px
+}
+
+#overlay>.close:before,
+#overlay>.close:after {
+    position: absolute;
+    content: ""
+}
+
+#overlay>.close:before {
+    top: 7px
+}
+
+#overlay>.close:after {
+    top: 15px
+}
+
+#overlay>.close:before {
+    -webkit-transform: translateY(4px) rotate(45deg);
+    -moz-transform: translateY(4px) rotate(45deg);
+    -ms-transform: translateY(4px) rotate(45deg);
+    -o-transform: translateY(4px) rotate(45deg);
+    transform: translateY(4px) rotate(45deg)
+}
+
+#overlay>.close:after {
+    -webkit-transform: translateY(-4px) rotate(-45deg);
+    -moz-transform: translateY(-4px) rotate(-45deg);
+    -ms-transform: translateY(-4px) rotate(-45deg);
+    -o-transform: translateY(-4px) rotate(-45deg);
+    transform: translateY(-4px) rotate(-45deg)
+}
+
+#overlay.-navigation-top>.navigation,
+#overlay.-navigation-bottom>.navigation {
+    height: 30px;
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center
+}
+
+#overlay.-navigation-top>.navigation div,
+#overlay.-navigation-bottom>.navigation div {
+    display: inline-block;
+    vertical-align: middle
+}
+
+#overlay.-navigation-top>.navigation .button,
+#overlay.-navigation-bottom>.navigation .button {
+    vertical-align: middle;
+    font-size: 18px
+}
+
+#overlay.-navigation-top>.navigation .button:before,
+#overlay.-navigation-bottom>.navigation .button:before {
+    display: inline-block
+}
+
+#overlay.-navigation-top>.navigation .button.backward:before,
+#overlay.-navigation-bottom>.navigation .button.backward:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay.-navigation-top>.navigation .button.backward:before,
+#overlay.-navigation-bottom>.navigation .button.backward:before {
+    padding-right: 5px
+}
+
+#overlay.-navigation-top>.navigation .button.forward:before,
+#overlay.-navigation-bottom>.navigation .button.forward:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay.-navigation-top>.navigation .button.forward:before,
+#overlay.-navigation-bottom>.navigation .button.forward:before {
+    padding-left: 5px
+}
+
+#overlay.-navigation-top>.navigation .button.auto-play:before,
+#overlay.-navigation-bottom>.navigation .button.auto-play:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay.-navigation-top>.navigation .button.auto-play.-is-playing:before,
+#overlay.-navigation-bottom>.navigation .button.auto-play.-is-playing:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay.-navigation-top {
+    padding-top: 50px
+}
+
+#overlay.-navigation-top>.navigation {
+    top: 10px
+}
+
+#overlay.-navigation-bottom>.navigation {
+    bottom: 3px
+}
+
+#overlay.-navigation-middle>.navigation .button {
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    position: absolute
+}
+
+#overlay.-navigation-middle>.navigation .button.backward {
+    left: 0
+}
+
+#overlay.-navigation-middle>.navigation .button.backward:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay.-navigation-middle>.navigation .button.forward {
+    right: 0
+}
+
+#overlay.-navigation-middle>.navigation .button.forward:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay>.slide {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    text-align: center;
+    -webkit-transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0
+}
+
+#overlay>.slide.not-active {
+    display: none
+}
+
+#overlay>.slide.active {
+    opacity: 1
+}
+
+#overlay>.slide>.fig {
+    position: relative;
+    height: 100%;
+    display: inline-block
+}
+
+#overlay>.slide>.fig:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    height: 100%
+}
+
+#overlay>.slide>.fig>div.img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    position: relative
+}
+
+#overlay>.slide>.fig>div.img:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)
+}
+
+#overlay>.slide>.fig>div.img img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto
+}
+
+#overlay>.slide>.fig.loading>div.img:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0 auto;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid #848484;
+    top: 50%;
+    margin-top: -15px;
+    -moz-transform: 50% 50%;
+    -o-transform: 50% 50%;
+    -ms-transform: 50% 50%;
+    -webkit-transform: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-animation: load8 1.1s infinite linear;
+    -o-animation: load8 1.1s infinite linear;
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 .7s infinite linear
+}
+
+#overlay>.slide>.fig.loading>div.img:before,
+#overlay>.slide>.fig.loading>div.img:after {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px
+}
+
+#overlay>.slide>.fig.loading>div.img img {
+    height: 100%
+}
+
+#overlay>.slide .share {
+    font-size: 20px;
+    line-height: 1em;
+    position: absolute;
+    left: -1em;
+    bottom: -2em
+}
+
+#overlay>.slide .share>span,
+#overlay>.slide .share a {
+    color: inherit;
+    position: relative;
+    display: inline;
+    vertical-align: middle
+}
+
+#overlay>.slide .share>span span,
+#overlay>.slide .share a span {
+    display: inline-block;
+    padding: 2px 1em 0 0
+}
+
+#overlay>.slide .share>span.facebook:before,
+#overlay>.slide .share a.facebook:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay>.slide .share>span.twitter:before,
+#overlay>.slide .share a.twitter:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay>.slide .share>span.pinterest:before,
+#overlay>.slide .share a.pinterest:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    font-family: vb-site-icons
+}
+
+#overlay>.slide>.caption {
+    position: relative;
+    height: 100%;
+    width: 33%;
+    float: left
+}
+
+#overlay>.slide>.caption ul {
+    position: absolute;
+    bottom: 0;
+    list-style: none
+}
+
+#overlay>.slide>.caption ul li {
+    padding-top: 1em
+}
+
+#overlay.-with-titles>.slide {
+    margin-bottom: 2em
+}
+
+#overlay.-with-titles>.slide>.fig>div.img>div.title {
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-top: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+#overlay.-navigation-bottom.-with-titles>.slide {
+    box-sizing: border-box
+}
