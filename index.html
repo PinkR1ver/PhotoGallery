@@ -119,6 +119,12 @@
 
 
   </head>
+  <script>
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      var body = document.getElementsByTagName('body')[0];
+      body.style.display = 'none';
+    }
+  </script>
   <body id="body" class="page-body">
 
     <div id="vb_page" class="/*background_cover:*/ background_cover_no
